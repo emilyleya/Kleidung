@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interaktiver Outfit Planer & Avatar Customizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="planner-container">
+  
+  <div class="avatar-view">
+    <h2>Dein Style</h2>
+    <div class="canvas">
+      <svg class="layer" viewBox="0 0 300 450">
+        <rect class="skin-part" x="115" y="280" width="25" height="120" rx="10"/>
+        <rect class="skin-part" x="160" y="280" width="25" height="120" rx="10"/>
+        <rect class="skin-part" x="70" y="140" width="20" height="100" rx="10"/>
+        <rect class="skin-part" x="210" y="140" width="20" height="100" rx="10"/>
+        <circle class="skin-part" cx="150" cy="80" r="35"/>
+        <rect class="skin-part" x="90" y="130" width="120" height="160" rx="20"/>
+        <circle cx="138" cy="75" r="3" fill="#333"/>
+        <circle cx="162" cy="75" r="3" fill="#333"/>
+        <path class="hair-part" d="M 112 75 Q 150 30 188 75 Q 150 55 112 75 Z" />
+      </svg>
+
+      <svg id="layer-shoes" class="layer" viewBox="0 0 300 450"></svg>
+      <svg id="layer-bottoms" class="layer" viewBox="0 0 300 450"></svg>
+      <svg id="layer-tops" class="layer" viewBox="0 0 300 450"></svg>
+    </div>
+  </div>
+
+  <div class="controls-panel">
+    
+    <div class="section">
+      <h3>1. Avatar anpassen</h3>
+      <p>Hautfarbe:</p>
+      <div class="color-picker-group">
+        <button class="color-btn" style="background:#ffdbac" onclick="setSkin('#ffdbac')"></button>
+        <button class="color-btn" style="background:#f1c27d" onclick="setSkin('#f1c27d')"></button>
+        <button class="color-btn" style="background:#ae703b" onclick="setSkin('#ae703b')"></button>
+        <button class="color-btn" style="background:#4a3319" onclick="setSkin('#4a3319')"></button>
+      </div>
+      <p>Haarfarbe:</p>
+      <div class="color-picker-group">
+        <button class="color-btn" style="background:#4a3728" onclick="setHair('#4a3728')"></button>
+        <button class="color-btn" style="background:#b85a1c" onclick="setHair('#b85a1c')"></button>
+        <button class="color-btn" style="background:#debc52" onclick="setHair('#debc52')"></button>
+        <button class="color-btn" style="background:#222222" onclick="setHair('#222222')"></button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>2. Oberteile</h3>
+      <div class="item-grid" id="grid-tops"></div>
+    </div>
+
+    <div class="section">
+      <h3>3. Hosen</h3>
+      <div class="item-grid" id="grid-bottoms"></div>
+    </div>
+
+    <div class="section">
+      <h3>4. Schuhe</h3>
+      <div class="item-grid" id="grid-shoes"></div>
+    </div>
+
+    <div class="section">
+      <h3>Einkaufsliste</h3>
+      <ul class="shop-list" id="shop-links">
+        <li>Keine Artikel ausgewählt</li>
+      </ul>
+    </div>
+
+    <button class="btn-share" onclick="shareOutfit()">Outfit-Link kopieren 🔗</button>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
